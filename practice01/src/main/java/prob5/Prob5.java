@@ -11,8 +11,7 @@ public class Prob5 {
 			if (a != 0 && a % 3 == 0) cnt++;
 			if (b % 3 == 0) cnt++;
 			if (cnt != 0) {
-				System.out.print(i);
-				System.out.print(" ");
+				System.out.printf("%d ", i);
 				for (int j = 0; j < cnt; j++) System.out.print("짝");
 				System.out.println();				
 			}

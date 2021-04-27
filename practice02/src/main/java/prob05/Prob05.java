@@ -27,7 +27,7 @@ public class Prob05 {
 					break;
 				}
 				else if (Ans > correctNumber) System.out.println("더 낮게");
-				else if (Ans < correctNumber) System.out.println("더 높게");
+				else System.out.println("더 높게");
 			}
 			
 			//새 게임 여부 확인하기
