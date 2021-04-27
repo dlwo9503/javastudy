@@ -10,8 +10,12 @@ public class Prob04 {
 	}
 	
 	public static char[] reverse(String str) {
-		/* 코드를 완성합니다 */
-		return null;
+		char[] strArr = str.toCharArray();
+		char[] strArr2 = new char[str.length()];
+		for (int i = 0; i < strArr2.length; i++) {
+			strArr2[i] = strArr[strArr.length - i - 1];
+		}
+		return strArr2;
 	}
 
 	public static void printCharArray(char[] array){
