@@ -1,8 +1,8 @@
 package tv;
 
 public class TV {
-	private int channel; // 1 ~ 255 넘어가면 1로 초기
-	private int volume; // 1 ~ 100
+	private int channel; // 1 ~ 255 넘어가면 1로 초기화
+	private int volume; // 0 ~ 100
 	private boolean power;
 	
 	public TV(){
@@ -30,18 +30,22 @@ public class TV {
 	}
 	public void channel(int channel) {
 		this.channel = channel;
+		if (channel > 255) this.channel = 255;
+		else if (channel < 1) this.channel = 1;
 	}
 	public void volume(boolean up) {
 		if(up) {
 			volume++;
-			if (channel > 100) channel = 1; 
+			if (volume > 100) volume = 1; 
 		}else {
 			volume--;
-			if (channel < 1) channel = 100;
+			if (volume < 0) volume = 100;
 		}
 	}
 	public void volume(int volume) {
 		this.volume = volume;
+		if (volume > 100) this.volume = 100;
+		else if (volume < 0) this.volume = 0;
 	}
 	
 	public void status() {
