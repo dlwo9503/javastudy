@@ -5,6 +5,16 @@ public class Goods2 {
 	private int price;
 	private int countSold;
 	private int countStock;
+	
+	public Goods2() { // 기본생성자
+	}
+	
+	public Goods2(String name, int price, int countSold, int countStock) {
+		this.name = name;
+		this.price = price;
+		this.countSold = countSold;
+		this.countStock = countStock;
+	}
 
 	public String getName() {
 		return name;
@@ -44,6 +54,10 @@ public class Goods2 {
 	public void showInfo() {
 		System.out.println("name:" + name + ", " + "price: " + price + ", " + "countStock:" + countStock + ", "
 				+ "countSold:" + countSold);
+	}
+	public int calcDiscountPrice(double rate) {
+		int discountPrice = (int)(price * rate);
+		return discountPrice;
 	}
 
 }

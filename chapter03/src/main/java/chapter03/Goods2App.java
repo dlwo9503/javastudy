@@ -9,10 +9,13 @@ public class Goods2App {
 		goods.setCountSold(20);
 		goods.setCountStock(30);
 		
-		goods.setPrice(0);
+		System.out.println(goods.calcDiscountPrice(0.5));
+		goods.setPrice(-1);
 		
 		goods.showInfo();
 
+		Goods2 goods2 = new Goods2("cannon", 20000, 20, 30);
+		goods2.showInfo(); // 위 방법보다 생성자를 만듦으로써 편해짐
 	}
 
 }
