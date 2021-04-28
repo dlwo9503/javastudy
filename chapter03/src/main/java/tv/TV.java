@@ -34,8 +34,10 @@ public class TV {
 	public void volume(boolean up) {
 		if(up) {
 			volume++;
+			if (channel > 100) channel = 1; 
 		}else {
 			volume--;
+			if (channel < 1) channel = 100;
 		}
 	}
 	public void volume(int volume) {
@@ -43,6 +45,6 @@ public class TV {
 	}
 	
 	public void status() {
-		System.out.println("TV[power=on, channel=11, volume=30]");
+		System.out.println("TV[power=" + power + ", channel=" + channel + ", volume=" + volume + "]");
 	}
 }
