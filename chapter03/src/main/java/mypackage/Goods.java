@@ -8,8 +8,8 @@ public class Goods {
 	}
 	
 	public String name;
-	protected int price;
-	int countStock; // 재고량
+	public int price;
+	public int countStock; // 재고량
 	private int countSold; // 판매량
 	
 	void m() {
