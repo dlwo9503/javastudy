@@ -11,7 +11,7 @@ public class PaintApp {
 		
 		Point point2 = new Point(100, 200);
 //		point2.show();
-		drawPoint(point2);
+		draw(point2);
 		
 //		point1.show(false);
 		
@@ -22,7 +22,7 @@ public class PaintApp {
 //		// 부모 리모컨으로 자식 설계도 사용시에 사용
 //		point3.show(true); // 이렇게 해도 재사용하기 때문에 color나옴
 //		point3.show();
-		drawPoint(point3);
+		draw(point3);
 		
 		Rect rect = new Rect();
 //		drawRect(rect);
@@ -38,10 +38,15 @@ public class PaintApp {
 //		drawShape(circle);
 		draw(circle);
 		
+		draw(new GraphicText("hello~"));
+		
+		// instanceof test
+		
+		
 	}
 	
 	public static void draw(Drawable drawable) {
-		pt.show();
+		drawable.draw();
 	}
 	
 //	public static void drawColorPoint(ColorPoint pt) {
