@@ -22,7 +22,7 @@ public class MainApp {
 			stack.push("Hello");
 
 			System.out.println(stack.pop());
-			System.out.println(stack.pop());
+			System.out.println(stack.pop()); // 여기서 발생되는 에러를 밑에서 처리하는걸 구현
 			
 		} catch ( MyStackException ex) {
 			System.out.println( ex );
