@@ -24,7 +24,7 @@ public class MainApp {
 			System.out.println(stack.pop());
 			System.out.println(stack.pop()); // 여기서 발생되는 에러를 밑에서 처리하는걸 구현
 			
-		} catch ( MyStackException ex) {
+		} catch (prob5.MyStackException ex) {
 			System.out.println( ex );
 		}
 
