@@ -1,8 +1,8 @@
 package tv;
 
 public class TV {
-	private int channel; // 1 ~ 255 넘어가면 1로 초기화
-	private int volume; // 0 ~ 100
+	private int channel; // 1 ~ 255 범위 순환
+	private int volume; // 0 ~ 100 범위 순환
 	private boolean power;
 	
 	public TV(){

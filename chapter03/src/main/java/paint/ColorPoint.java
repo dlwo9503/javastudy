@@ -3,6 +3,13 @@ package paint;
 public class ColorPoint extends Point {
 	private String color;
 
+	public ColorPoint(int x, int y, String color) {
+//		setX(x); // 상속받았기 때문에 this는 사용 불가
+//		setY(y);
+		super(x, y);
+		this.color = color;
+	}
+
 	public String getColor() {
 		return color;
 	}
