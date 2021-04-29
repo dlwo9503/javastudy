@@ -39,4 +39,6 @@ public class Point{
 		return true;
 	}
 	// hashCode 와 equals 는 동시에 오버라이드 함
+	// 먼저 hashCode를 비교하고 equals를 비교하기 때문에 같이 묶어서 사용함
+	// 그래야 성능적인면에서 좋음
 }
