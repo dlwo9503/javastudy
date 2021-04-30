@@ -3,8 +3,8 @@ package prob5;
 import prob5.MyStackException;
 
 public class MyStack{
-	private String[] data;
 	private int top = -1;
+	private String[] data;
 
 	public MyStack(int size) {
 		data = new String[size];

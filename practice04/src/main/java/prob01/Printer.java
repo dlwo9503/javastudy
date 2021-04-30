@@ -1,5 +1,7 @@
 package prob01;
 
+import java.util.Iterator;
+
 public class Printer {
 	private int a;
 	private boolean b;
@@ -17,5 +19,23 @@ public class Printer {
 	}
 	public void println(String string) {
 		System.out.println(string);
+	}
+	
+	public <T> void println(T t) {
+		System.out.println(t);
+	}
+	public <T> void println(T... ts) {
+		for (T t : ts) {
+			System.out.print(t);
+			System.out.print(" ");
+		}
+		System.out.println("");
+	}
+	public int sum(Integer... nums) { // 가변 배열
+		Integer sum = 0;
+		for (Integer i : nums) {
+			sum += i;
+		}
+		return sum;
 	}
 }
