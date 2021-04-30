@@ -13,8 +13,7 @@ public class CalcApp {
 		String[] tokens = expression.split(" ");
 
 		if (tokens.length != 3) {
-			System.out.println(">> 알 수 없는 식입니다.");
-			continue;
+			System.out.println("알 수 없는 식입니다.");
 		}
 
 		int lValue = Integer.parseInt(tokens[0]);
@@ -23,33 +22,29 @@ public class CalcApp {
 		switch (tokens[2]) {
 		case "+": {
 			Add add = new Add();
-			add.setValue(lValue, rValue);
-			int result = add.calculate(result, result);
-			System.out.println(">> " + result);
+			int result = add.calculate(lValue, rValue);
+			System.out.println(result);
 
 			break;
 		}
 		case "-": {
 			Sub sub = new Sub();
-			sub.setValue(lValue, rValue);
-			int result = sub.calculate();
-			System.out.println(">> " + result);
+			int result = sub.calculate(lValue, rValue);
+			System.out.println(result);
 
 			break;
 		}
 		case "*": {
 			Mul mul = new Mul();
-			mul.setValue(lValue, rValue);
-			int result = mul.calculate();
-			System.out.println(">> " + result);
+			int result = mul.calculate(lValue, rValue);
+			System.out.println(result);
 
 			break;
 		}
 		case "/": {
 			Div div = new Div();
-			div.setValue(lValue, rValue);
-			int result = div.calculate();
-			System.out.println(">> " + result);
+			int result = div.calculate(lValue, rValue);
+			System.out.println(result);
 
 			break;
 		}

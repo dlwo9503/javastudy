@@ -14,10 +14,15 @@ public class Gugudan {
 		System.out.println(n1 + " * " + n2 + " = ?\n");
 
 		int[] arr = new int[9];
-		for (int i = 0; i < 8; i++) {
-			arr[i] = (rand.nextInt(9) + 1) * (rand.nextInt(9) + 1);
-		}
 		arr[8] = n1 * n2;
+		for (int i = 0; i < 8; i++) {
+			int temp = (rand.nextInt(9) + 1) * (rand.nextInt(9) + 1);
+			if (temp != arr[8]) {
+				arr[i] = temp;	
+			} else {
+				i--;
+			}
+		}
 
 		int swap = rand.nextInt(9);
 		
