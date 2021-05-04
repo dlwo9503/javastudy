@@ -17,7 +17,7 @@ public class Localhost { // 자기 자신
 			
 			byte[] addresses = inetAddress.getAddress();
 			for (byte address : addresses) {
-				System.out.print(address & 0x000000ff);
+				System.out.print(address & 0x000000ff); // 0x000000ff == 127 -> & 연산을 해줘서 변환해
 				System.out.print(".");
 			}
 			
