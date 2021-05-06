@@ -52,6 +52,7 @@
     <module>chapter04</module>
     <module>finaltest</module>
     <module>AdvancedJava-Final-Test</module>
+    <module>network</module>
 	</modules>
 
 </project>
