@@ -24,7 +24,7 @@ public class EchoServer {
 				Socket socket = serverSocket.accept();
 
 				Thread thread = new EchoServerReceiveThread(socket);
-				thread.start();
+				thread.start(); // 쓰레드 사용
 			}
 
 		} catch (IOException e) {
