@@ -53,7 +53,10 @@ public class ChatWindow {
 		/*
 		 * 1. UI 초기화
 		 */
-		System.out.println(name +  "님 입장 하였습니다. 즐거운 채팅되세요~" );
+		
+		System.out.println(name +  "님 입장 하겠습니다." );
+		updateTextArea(name + "님 입장 하였습니다. 즐거운 채팅되세요~!");
+//		pw.println( "MESSAGE:" + name + "님 입장했습니다. 즐거운 채팅되세요~!" );
 		
 		// Button
 		buttonSend.setBackground(Color.GRAY);
