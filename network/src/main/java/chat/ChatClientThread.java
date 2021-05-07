@@ -4,28 +4,33 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.net.SocketException;
 
 public class ChatClientThread extends Thread {
-	private BufferedReader br;
-	private Socket socket = null;
-
-	ChatClientThread(Socket socket) {
+	private Socket socket;
+	
+	public ChatClientThread( Socket socket ) {
 		this.socket = socket;
 	}
 	
 	@Override
 	public void run() {
+		try{
+			BufferedReader br = new BufferedReader( new InputStreamReader(socket.getInputStream(), "UTF-8" ) );
 
-		/* reader를 통해 읽은 데이터 콘솔에 출력하기 (message 처리) */
-		try {
-			br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "utf-8"));
-			while (true) {
-				System.out.println(br.readLine());
+			while( true ) {
+				String line = br.readLine();
+				if( line == null ) {
+					break;
+				}
+				System.out.println( line );
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch( SocketException ex ){
+			ChatClient.log( "error : " + ex );	
+		} catch( IOException ex ){
+			ChatClient.log( "error : " + ex );	
+		} finally {
+			System.exit(0);
 		}
-
 	}
-
 }
