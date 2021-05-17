@@ -10,8 +10,13 @@ import java.net.Socket;
 import java.nio.file.Files;
 
 public class RequestHandler extends Thread {
-	private static final String DOCUMENTROOT = "./webapp";
+//	private static final String DOCUMENTROOT = "./webapp"; // 로컬용으로 남겨
+	private static String DOCUMENTROOT = "";
 	private Socket socket;
+	
+	static {
+		DOCUMENTROOT = RequestHandler.class.getClass().getResource("/webapp").getPath();
+	}
 
 	public RequestHandler(Socket socket) {
 		this.socket = socket;
@@ -116,8 +121,15 @@ public class RequestHandler extends Thread {
 	}
 
 	private void response404Error(OutputStream os, String url, String protocol) throws IOException {
+		
+		url = "/error/404.html";
 
 		File file = new File(DOCUMENTROOT + url);
+		if(file.exists() == false) {
+			System.out.println("file not found:" + file.getAbsolutePath());
+			return;
+		}
+		
 		byte[] body = Files.readAllBytes(file.toPath());
 		String contentType = Files.probeContentType(file.toPath());
 		os.write((protocol + " 404 File not found\r\n").getBytes("UTF-8"));
